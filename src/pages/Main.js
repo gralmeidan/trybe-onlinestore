@@ -2,6 +2,8 @@ import React from 'react';
 import Categories from '../components/Categories';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import MainCard from '../components/MainCard';
+import Header from '../components/Header';
+import SearchBar from '../components/SearchBar';
 
 class Main extends React.Component {
   state = {
@@ -21,20 +23,24 @@ class Main extends React.Component {
 
   fetchProducts = async () => {
     const { category, query } = this.state;
-    const { results: products } = await getProductsFromCategoryAndQuery(category, query);
+    const { results } = await getProductsFromCategoryAndQuery(category, query);
     this.setState(() => ({
-      products,
+      products: results || []
     }));
   };
 
   render() {
-    const { products } = this.state;
+    const { products, query } = this.state;
     return (
       <div>
-        <header className='bg-rose-600'>
-          <h1 className='text-white text-2xl p-3 font-semibold'>TrybeStore</h1>
-        </header>
-        <div className='flex w-full m-2'>
+        <Header>
+          <SearchBar 
+            value={query}
+            name='query'
+            onChange={this.handleChange}
+          />
+        </Header>
+        <div className='flex w-full m-3'>
           <Categories 
             handleChange={this.handleChange}
           />
