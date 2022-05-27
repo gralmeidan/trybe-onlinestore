@@ -1,6 +1,7 @@
 import React from 'react';
 import { getCategories } from '../services/api';
 import './Categories.css';
+import PropTypes from 'prop-types';
 
 class Categories extends React.Component {
   state = {
@@ -19,8 +20,14 @@ class Categories extends React.Component {
     return (
       <aside className='w-fit m-1'>
         { categories.map(({ id, name }) => (
-          <label key={id} className='flex items-center group'>
-            <input type='radio' name='category' className='hidden'/>
+          <label key={id} className='flex items-center group cursor-pointer'>
+            <input
+              onChange={this.props.handleChange}
+              type='radio' 
+              name='category' 
+              className='hidden' 
+              value={id}
+            />
             <p className='checkmark'>{name}</p>
           </label>
         )) }
@@ -28,5 +35,9 @@ class Categories extends React.Component {
     );
   }
 }
+
+Categories.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+};
 
 export default Categories;
