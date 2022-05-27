@@ -22,3 +22,15 @@ body {
 .font-roboto {
   font-family: "Roboto", sans-serif;
 }
+
+.modal-shadow {
+  box-shadow: -2px 2px 10px 3px #47494d7e;
+}
+
+.modal {
+  transition: right 0.3s ease-out;
+}
+
+.right-600- {
+  right: -600px;
+}

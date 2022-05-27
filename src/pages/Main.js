@@ -40,7 +40,7 @@ class Main extends React.Component {
             onChange={this.handleChange}
           />
         </Header>
-        <div className='flex w-full m-3'>
+        <div className='flex w-full p-3'>
           <Categories 
             handleChange={this.handleChange}
           />
