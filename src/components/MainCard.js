@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { addToCart } from "../services/cartStorage";
 
 class MainCard extends React.Component {
   formattedPrice = () => {
@@ -24,7 +25,11 @@ class MainCard extends React.Component {
         <div className="flex w-full justify-between p-2 px-4
         items-center">
           <p>{`R$ ${this.formattedPrice()}`}</p>
-          <button>
+          <button
+            onClick={() => {
+              addToCart({ ...this.props });
+            }}
+          >
             <AddShoppingCartIcon className="hover:text-rose-600
             active:text-rose-900" alt="add to cart"/>
           </button>
