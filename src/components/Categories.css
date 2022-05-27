@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.checkmark {
+  @apply ml-1 text-gray-900 group-hover:text-gray-600 transition-all duration-100 m-1 font-semibold;
+}
+
+input:checked + .checkmark {
+  @apply text-rose-600 group-hover:text-rose-500;
+}
