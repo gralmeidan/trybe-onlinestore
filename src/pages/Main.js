@@ -1,11 +1,13 @@
 import React from 'react';
 import Categories from '../components/Categories';
 import { getProductsFromCategoryAndQuery } from '../services/api';
+import MainCard from '../components/MainCard';
 
 class Main extends React.Component {
   state = {
     category: '',
     query: '',
+    products: [],
   };
 
   handleChange = ({ target }) => {
@@ -26,6 +28,7 @@ class Main extends React.Component {
   };
 
   render() {
+    const { products } = this.state;
     return (
       <div>
         <header className='bg-rose-600'>
@@ -36,7 +39,7 @@ class Main extends React.Component {
             handleChange={this.handleChange}
           />
           <main className='grow'>
-            opa
+            { products.map((props) => <MainCard {...props} key={props.id}/>)}
           </main>
         </div>
       </div>
