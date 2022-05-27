@@ -38,7 +38,7 @@ class Main extends React.Component {
           <Categories 
             handleChange={this.handleChange}
           />
-          <main className='grow'>
+          <main className='grow flex flex-wrap justify-center'>
             { products.map((props) => <MainCard {...props} key={props.id}/>)}
           </main>
         </div>

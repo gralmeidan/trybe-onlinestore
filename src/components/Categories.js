@@ -18,7 +18,7 @@ class Categories extends React.Component {
   render() {
     const { categories } = this.state;
     return (
-      <aside className='w-fit m-1'>
+      <aside className='max-w-fit w-36 m-1'>
         { categories.map(({ id, name }) => (
           <label key={id} className='flex items-center group cursor-pointer'>
             <input
