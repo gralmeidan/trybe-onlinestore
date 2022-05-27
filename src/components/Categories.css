@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .checkmark {
-  @apply ml-1 text-gray-900 group-hover:text-gray-600 transition-all duration-100 m-1 font-semibold;
+  @apply ml-1 text-gray-900 group-hover:text-gray-700 transition-all duration-100 m-1 font-semibold;
 }
 
 input:checked + .checkmark {
