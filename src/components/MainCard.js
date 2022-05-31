@@ -1,18 +1,11 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { formattedPrice } from "../helpers/formatting";
 
 class MainCard extends React.Component {
-  formattedPrice = () => {
-    const { price } = this.props;
-    return price
-      .toFixed(2)
-      .toString()
-      .replace('.',',');
-  };
-
   render() {
-    const { title, thumbnail, addToCart } = this.props;
+    const { title, thumbnail, addToCart, price } = this.props;
     return(
       <div className="basis-52 m-2 grow bg-white rounded-lg 
         main-card-shadow p-2 pt-3 flex flex-col items-center
@@ -23,7 +16,7 @@ class MainCard extends React.Component {
         <img src={thumbnail} alt='' className="my-4 w-24" />
         <div className="flex w-full justify-between p-2 px-4
         items-center">
-          <p>{`R$ ${this.formattedPrice()}`}</p>
+          <p>{`R$ ${formattedPrice(price)}`}</p>
           <button
             onClick={() => {
               addToCart({ ...this.props });

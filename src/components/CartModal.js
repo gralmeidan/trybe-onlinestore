@@ -3,11 +3,13 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PropTypes from 'prop-types';
 import CloseIcon from '@mui/icons-material/Close';
 import CartCard from './CartCard';
+import { formattedPrice } from '../helpers/formatting';
 
 class CartModal extends React.Component {
 
   render() {
-    const { display, modalToggle, cartItems } = this.props;
+    const { display, modalToggle, cartItems, addToCart, removeFromCart } = this.props;
+    let totalPrice = 0;
     return(
       <div 
         className='fixed w-full'
@@ -19,7 +21,7 @@ class CartModal extends React.Component {
         bg-gray-900 modal-shadow h-full w-[550px] p-4 modal`}
           onClick={(e) => e.stopPropagation()}
         >
-          <section className='flex flex-col'>
+          <section className='flex flex-col h-full'>
             <div className='flex justify-between'>
               <ShoppingCartIcon 
                 className='text-rose-50 mb-2' 
@@ -34,12 +36,23 @@ class CartModal extends React.Component {
               </button>
             </div>
             <hr className='border-gray-600'/>
-            { Object.keys(cartItems).map(id => (
-              <CartCard 
-                { ...cartItems[id] }
-                key={id}
-              />
-            )) }
+            <div className='grow overflow-auto'>
+              { Object.keys(cartItems).map(id => {
+                totalPrice += cartItems[id].price * cartItems[id].amount;
+                return (
+                  <CartCard 
+                    { ...cartItems[id] }
+                    addToCart={addToCart}
+                    removeFromCart={removeFromCart}
+                    key={id}
+                  />
+                );
+              }) }
+            </div>
+            <hr className='border-gray-600' />
+            <p
+              className='font-roboto text-lg font-semibold text-white mt-2'
+            >R$ {formattedPrice(totalPrice)}</p>
           </section>
         </div>
       </div>

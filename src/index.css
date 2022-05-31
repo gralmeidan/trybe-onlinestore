@@ -10,9 +10,24 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.cart-card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.cart-button {
+  @apply bg-rose-600 text-white px-5 font-roboto mx-4 border-2
+  border-rose-600 rounded-md active:bg-white active:text-rose-600 
+  active:border-2 transition-all hover:bg-rose-500 hover:border-rose-500;
 }
 
 .main-card-shadow {
