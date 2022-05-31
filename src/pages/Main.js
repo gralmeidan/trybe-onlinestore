@@ -4,6 +4,7 @@ import { getProductsFromCategoryAndQuery } from '../services/api';
 import MainCard from '../components/MainCard';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
+import PropTypes from 'prop-types';
 
 class Main extends React.Component {
   state = {
@@ -31,9 +32,14 @@ class Main extends React.Component {
 
   render() {
     const { products, query } = this.state;
+    const { cartItems, addToCart, removeFromCart } = this.props;
     return (
       <div>
-        <Header>
+        <Header
+          cartItems={ cartItems }
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        >
           <SearchBar 
             value={query}
             name='query'
@@ -45,12 +51,22 @@ class Main extends React.Component {
             handleChange={this.handleChange}
           />
           <main className='grow flex flex-wrap justify-center'>
-            { products.map((props) => <MainCard {...props} key={props.id}/>)}
+            { products.map((props) => <MainCard 
+              {...props} 
+              key={props.id}
+              addToCart={addToCart}  
+            />)}
           </main>
         </div>
       </div>
     );
   }
 }
+
+Main.propTypes = {
+  cartItems: PropTypes.any.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
+};
 
 export default Main;

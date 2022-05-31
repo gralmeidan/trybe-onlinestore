@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { addToCart } from "../services/cartStorage";
 
 class MainCard extends React.Component {
   formattedPrice = () => {
@@ -13,7 +12,7 @@ class MainCard extends React.Component {
   };
 
   render() {
-    const { title, thumbnail } = this.props;
+    const { title, thumbnail, addToCart } = this.props;
     return(
       <div className="basis-52 m-2 grow bg-white rounded-lg 
         main-card-shadow p-2 pt-3 flex flex-col items-center
@@ -43,6 +42,7 @@ MainCard.propTypes = {
   title: PropTypes.string.isRequired,
   thumbnail: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default MainCard;

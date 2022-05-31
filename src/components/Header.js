@@ -27,7 +27,10 @@ class Header extends React.Component {
       </div>
       <CartModal 
         display={this.state.display}
+        cartItems={this.props.cartItems}
         modalToggle={this.modalToggle}
+        addToCart={this.props.addToCart}
+        removeFromCart={this.props.removeFromCart}
       />
     </header>
   );
@@ -37,7 +40,10 @@ Header.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-  ]).isRequired
+  ]).isRequired,
+  cartItems: PropTypes.any.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
 };
 
 export default Header;
