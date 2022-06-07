@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { getCart, addToCart, removeFromCart } from './services/cartStorage';
+import ProductDetails from './pages/ProductDetails';
 import Main from './pages/Main';
 
 class App extends React.Component {
@@ -33,9 +34,20 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route 
-            path="/" 
+            exact path="/" 
             render={(props) => (
               <Main 
+                {...props}
+                cartItems={this.state.cartItems}
+                addToCart={this.addToCart}
+                removeFromCart={this.removeFromCart}
+              />
+            )}  
+          />
+          <Route 
+            path="/product/:id" 
+            render={(props) => (
+              <ProductDetails 
                 {...props}
                 cartItems={this.state.cartItems}
                 addToCart={this.addToCart}
