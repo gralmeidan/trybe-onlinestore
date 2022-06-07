@@ -15,7 +15,7 @@ class Header extends React.Component {
   };
 
   render = () => (
-    <header className='bg-rose-600 flex sticky top-0'>
+    <header className='bg-rose-600 flex sticky top-0 z-30'>
       <h1 className='text-white text-2xl p-3 font-semibold'>TrybeStore</h1>
       <div className='flex grow justify-between'>
         <div className='flex grow justify-center'>

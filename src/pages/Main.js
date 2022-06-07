@@ -54,6 +54,9 @@ class Main extends React.Component {
             { products.map((props) => <MainCard 
               {...props} 
               key={props.id}
+              inCart={
+                typeof Object.values(cartItems).find(({ id }) => id === props.id) !== 'undefined'
+              }
               addToCart={addToCart}  
             />)}
           </main>
