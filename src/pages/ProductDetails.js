@@ -28,7 +28,7 @@ class ProductDetails extends React.Component {
           removeFromCart={removeFromCart}
         />
         { !title ? <p>loading</p> :
-          <main className="mt-2">
+          <main className="mt-2 sm:flex">
             <PictureDisplay pictures={pictures} />
             <h1 className="font-roboto text-lg text-center font-medium">{title}</h1>
           </main>
