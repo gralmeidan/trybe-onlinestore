@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import PropTypes from 'prop-types';
 import { fetchProduct } from "../services/api";
 import PictureDisplay from "../components/PictureDisplay";
+import ProductInfo from "../components/ProductInfo";
 
 class ProductDetails extends React.Component {
   state = {
@@ -30,7 +31,7 @@ class ProductDetails extends React.Component {
         { !title ? <p>loading</p> :
           <main className="mt-2 sm:flex">
             <PictureDisplay pictures={pictures} />
-            <h1 className="font-roboto text-lg text-center font-medium">{title}</h1>
+            <ProductInfo {...this.state.produto} addToCart={addToCart}/>
           </main>
         }
       </div>

@@ -21,10 +21,37 @@ export async function getProductsFromCategoryAndQuery(categoryId, query) {
   return response;
 }
 
-export async function fetchProduct(id) {
+async function fetchDescription(id) {
+  const URL = `https://api.mercadolibre.com/items/${id}/description`;
+  const response = await fetch(URL)
+    .then((data) => data.json())
+    .catch((error) => error);
+  return response;
+}
+
+async function fetchReviews(id) {
+  const URL = `https://api.mercadolibre.com/reviews/item/${id}`;
+  const response = await fetch(URL)
+    .then((data) => data.json())
+    .catch((error) => error);
+  return response;
+}
+
+async function fetchDetails(id) {
   const URL = `https://api.mercadolibre.com/items/${id}`;
   const response = await fetch(URL)
     .then((data) => data.json())
     .catch((error) => error);
   return response;
+}
+
+export async function fetchProduct(id) {
+  const details = await fetchDetails(id);
+  const reviews = await fetchReviews(id);
+  const description = await fetchDescription(id);
+  return {
+    ...details,
+    description,
+    reviews,
+  };
 }
