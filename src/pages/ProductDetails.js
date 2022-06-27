@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { fetchProduct } from "../services/api";
 import PictureDisplay from "../components/PictureDisplay";
 import ProductInfo from "../components/ProductInfo";
+import ProductPricing from "../components/ProductPricing";
 
 class ProductDetails extends React.Component {
   state = {
@@ -31,7 +32,9 @@ class ProductDetails extends React.Component {
         { !title ? <p>loading</p> :
           <main className="mt-2 sm:flex">
             <PictureDisplay pictures={pictures} />
-            <ProductInfo {...this.state.produto} addToCart={addToCart}/>
+            <ProductInfo {...this.state.produto}/>
+            <hr className="sm:hidden border-[1px]"/>
+            <ProductPricing {...this.state.produto} addToCart={addToCart}/>
           </main>
         }
       </div>
