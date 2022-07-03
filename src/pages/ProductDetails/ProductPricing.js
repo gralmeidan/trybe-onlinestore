@@ -65,14 +65,11 @@ const ProductPricing = (props) => {
             placeholder='CEP: _____-___'  
             value={CEP}
             onChange={handleCEPChange}
-            className="border-[1px] border-neutral-400 rounded-sm pl-2 mr-2
-            focus:outline-rose-600"
+            className="text-input"
           />
           <button
             onClick={handleShippingCalc}
-            className="border-rose-600 border-2 px-2 font-roboto font-semibold
-          text-rose-600 rounded-md py-1 hover:bg-rose-600 hover:text-white
-          transition-all"
+            className="btn-bordered"
           >
           OK
           </button>

@@ -57,3 +57,15 @@ body {
 .right-0 {
   right: 0;
 }
+
+.text-input {
+  @apply border-[1px] border-neutral-400 rounded-sm pl-2 mr-2
+focus:outline-rose-600;
+}
+
+.btn-bordered {
+  @apply border-rose-600 border-2 px-2 font-roboto font-semibold
+text-rose-600 rounded-md py-1 hover:bg-rose-600 hover:text-white
+  transition-all disabled:border-rose-300 disabled:text-rose-300
+  disabled:hover:bg-white disabled:hover:text-rose-300;
+}
