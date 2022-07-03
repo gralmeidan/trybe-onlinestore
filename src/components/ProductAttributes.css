@@ -9,3 +9,15 @@
 #attributes-table td {
   @apply text-sm p-1;
 }
+
+#attributes-table .hide {
+  @apply max-h-0;
+}
+
+#attributes-table .display {
+  max-height: 10000px;
+}
+
+#attributes-table .tl-rotate-180 {
+  @apply rotate-180;
+}
