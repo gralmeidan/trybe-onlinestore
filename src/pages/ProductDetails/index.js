@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import PropTypes from 'prop-types';
-import { fetchProduct } from "../services/api";
-import PictureDisplay from "../components/PictureDisplay";
-import ProductInfo from "../components/ProductInfo";
-import ProductPricing from "../components/ProductPricing";
-import ProductAttributes from "../components/ProductAttributes";
+import { fetchProduct } from "../../services/api";
+import PictureDisplay from "./PictureDisplay";
+import ProductInfo from "./ProductInfo";
+import ProductPricing from "./ProductPricing";
+import ProductAttributes from "./ProductAttributes";
 
 class ProductDetails extends React.Component {
   state = {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { formattedPrice } from '../helpers/formatting';
+import { formattedPrice } from '../../helpers/formatting';
 import ArrowDown from '@mui/icons-material/ArrowDropDownRounded';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 

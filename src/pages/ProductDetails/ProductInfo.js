@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import StarDisplay from "./StarDisplay";
+import StarDisplay from "../../components/StarDisplay";
 
 const ProductInfo = (props) => {
   const { title, description, reviews } = props;
