@@ -5,6 +5,7 @@ import { fetchProduct } from "../services/api";
 import PictureDisplay from "../components/PictureDisplay";
 import ProductInfo from "../components/ProductInfo";
 import ProductPricing from "../components/ProductPricing";
+import ProductAttributes from "../components/ProductAttributes";
 
 class ProductDetails extends React.Component {
   state = {
@@ -35,6 +36,7 @@ class ProductDetails extends React.Component {
             <ProductInfo {...this.state.produto}/>
             <hr className="sm:hidden border-[1px]"/>
             <ProductPricing {...this.state.produto} addToCart={addToCart}/>
+            <ProductAttributes {...this.state.produto} />
           </main>
         }
       </div>

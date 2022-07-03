@@ -91,11 +91,12 @@ const ProductPricing = (props) => {
           addToCart({ ...props });
         }}
         className="p-2 w-full bg-rose-600 font-roboto font-semibold text-white
-        text-lg rounded-lg my-4"
+        text-lg rounded-lg my-4 hover:bg-rose-700 transition-colors"
       >
         Adicionar ao carrinho
-        <AddShoppingCartIcon className="hover:text-rose-600
-            active:text-rose-900 ml-4" alt="add to cart"/>
+        <AddShoppingCartIcon 
+          className="ml-4" 
+          alt="add to cart"/>
       </button>
     </div>
   );};

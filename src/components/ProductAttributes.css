@@ -1,0 +1,11 @@
+#attributes-table {
+  font-family: "Roboto", sans;
+}
+
+#attributes-table tbody tr {
+  @apply bg-rose-100 odd:bg-rose-200;
+}
+
+#attributes-table td {
+  @apply text-sm p-1;
+}
