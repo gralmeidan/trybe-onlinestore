@@ -6,6 +6,7 @@ import PictureDisplay from "./PictureDisplay";
 import ProductInfo from "./ProductInfo";
 import ProductPricing from "./ProductPricing";
 import ProductAttributes from "./ProductAttributes";
+import ProductReviews from "./ProductReviews";
 
 class ProductDetails extends React.Component {
   state = {
@@ -22,7 +23,7 @@ class ProductDetails extends React.Component {
 
   render() {
     const { cartItems, addToCart, removeFromCart } = this.props;
-    const { title, pictures } = this.state.produto;
+    const { title, pictures, reviews } = this.state.produto;
     return (
       <div>
         <Header
@@ -37,6 +38,7 @@ class ProductDetails extends React.Component {
             <hr className="sm:hidden border-[1px]"/>
             <ProductPricing {...this.state.produto} addToCart={addToCart}/>
             <ProductAttributes {...this.state.produto} />
+            <ProductReviews { ...reviews } />
           </main>
         }
       </div>
