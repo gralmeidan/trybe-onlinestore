@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import StarDisplay from "../../components/StarDisplay";
+import './ProductInfo.css';
 
 const ProductInfo = (props) => {
+  const [ hideDescription, setHideDescription] = useState(true);
+  const [ showLink, setShowLink] = useState(false);
   const { title, description, reviews } = props;
+  const ref = React.createRef();
+
+  React.useLayoutEffect(() => {
+    if (ref.current.clientHeight < ref.current.scrollHeight) {
+      setShowLink(true);
+    }
+  }, [ref]);
+
   return (
-    <div>
-      <h1 className="mx-2 font-roboto font-medium text-xl text-justify">
+    <div className="md:w-2/4">
+      <h1 className="mx-2 font-roboto font-medium text-xl text-justify md:text-left">
         {title}
       </h1>
       <div className="m-2">
@@ -20,7 +31,16 @@ const ProductInfo = (props) => {
             { reviews.rating_average.toFixed(1) }
           </span>
         </p>
-        <p className="text-sm font-sans text-justify">{description.plain_text}</p>
+        <p 
+          className={`text-sm font-sans text-justify 
+          ${ hideDescription && 'prod-info-description'}`}
+          ref={ref}
+        >{description.plain_text}</p>
+        <button
+          className={`hidden ${showLink && 'md:block'} font-roboto 
+          text-sm underline text-rose-600`}
+          onClick={() => setHideDescription(prev => !prev)}
+        >Mostrar { hideDescription ? 'mais' : 'menos'}</button> 
       </div>
     </div>
   );};

@@ -32,16 +32,20 @@ class ProductDetails extends React.Component {
           removeFromCart={removeFromCart}
         />
         { !title ? <p>loading</p> :
-          <main className="mt-2 sm:flex">
-            <PictureDisplay pictures={pictures} />
-            <ProductInfo {...this.state.produto}/>
-            <hr className="sm:hidden border-[1px]"/>
-            <ProductPricing {...this.state.produto} addToCart={addToCart}/>
-            <ProductAttributes {...this.state.produto} />
-            <ProductReviews 
-              { ...reviews } 
-              id={id}  
-            />
+          <main className="mt-2">
+            <div className="md:flex">
+              <PictureDisplay pictures={pictures} />
+              <ProductInfo {...this.state.produto}/>
+              <hr className="md:hidden border-[1px]"/>
+              <ProductPricing {...this.state.produto} addToCart={addToCart}/>
+            </div>
+            <div>
+              <ProductAttributes {...this.state.produto} />
+              <ProductReviews 
+                { ...reviews } 
+                id={id}  
+              />
+            </div>
           </main>
         }
       </div>

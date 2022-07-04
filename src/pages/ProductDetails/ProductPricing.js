@@ -37,7 +37,7 @@ const ProductPricing = (props) => {
   };
 
   return (
-    <div className='m-2'>
+    <div className='m-2 md:shrink h-full'>
       <div className='mb-4'>
         {discount && (
           <p>
