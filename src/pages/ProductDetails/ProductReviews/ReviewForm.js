@@ -65,6 +65,7 @@ class ReviewForm extends React.Component {
             rate={parseInt(rate)}
             name='rate'
             onChange={this.handleChange}  
+            className='text-rose-600 cursor-pointer'
           />
           <button
             className="btn-bordered"

@@ -14,7 +14,7 @@ class ProductAttributes extends React.Component {
     const { attributes } = this.props;
     return (
       <div className="flex flex-col border-[1px] border-neutral-400
-      m-1 rounded-md" id="attributes-table">
+      m-1 rounded-md overflow-hidden" id="attributes-table">
         <button
           onClick={() => this.setState(({display}) => ({
             display: !display
@@ -24,8 +24,8 @@ class ProductAttributes extends React.Component {
           Mostrar atributos
           <ArrowDown className={`${ display && 'rotate-180'}`} />
         </button>
-        <div className={`overflow-hidden transition-all duration-300 ease-out
-        ${ display ? 'display' : 'hide'} 2`}>
+        <div className={`overflow-hidden transition-all
+        ${ display ? 'display' : 'hide'}`}>
           <table className="w-full">
             <tbody>
               { attributes.map(({ name, value_name, id }) => (

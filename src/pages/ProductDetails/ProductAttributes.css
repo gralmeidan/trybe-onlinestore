@@ -11,11 +11,14 @@
 }
 
 #attributes-table .hide {
-  @apply max-h-0;
+  max-height: 0px;
+  @apply ease-out duration-300;
 }
 
 #attributes-table .display {
   max-height: 10000px;
+  transition-duration: 400ms;
+  @apply ease-in;
 }
 
 #attributes-table .tl-rotate-180 {
