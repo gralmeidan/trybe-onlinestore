@@ -25,8 +25,8 @@ class ProductAttributes extends React.Component {
           <ArrowDown className={`${ display && 'rotate-180'}`} />
         </button>
         <div className={`overflow-hidden transition-all duration-300 ease-out
-        ${ display ? 'display' : 'hide'}`}>
-          <table>
+        ${ display ? 'display' : 'hide'} 2`}>
+          <table className="w-full">
             <tbody>
               { attributes.map(({ name, value_name, id }) => (
                 <tr key={id}>

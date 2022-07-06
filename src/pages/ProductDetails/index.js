@@ -32,7 +32,7 @@ class ProductDetails extends React.Component {
           removeFromCart={removeFromCart}
         />
         { !title ? <p>loading</p> :
-          <main className="mt-2">
+          <main className="mt-2 lg:w-5/6 lg:m-auto xl:w-3/4">
             <div className="md:flex">
               <PictureDisplay pictures={pictures} />
               <ProductInfo {...this.state.produto}/>

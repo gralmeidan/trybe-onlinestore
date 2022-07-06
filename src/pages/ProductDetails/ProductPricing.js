@@ -37,7 +37,7 @@ const ProductPricing = (props) => {
   };
 
   return (
-    <div className='m-2 md:shrink h-full'>
+    <div className='m-2 md:shrink md:h-[500px] md:flex md:flex-col'>
       <div className='mb-4'>
         {discount && (
           <p>
