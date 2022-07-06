@@ -17,8 +17,9 @@ class CartModal extends React.Component {
         onClick={modalToggle}  
       >
         <div 
-          className={`fixed top-0 right-${display ? '0' : '600-'} 
-        bg-gray-900 modal-shadow h-full w-[550px] p-4 modal`}
+          className={`fixed top-0 right-${display ? '0' : '700-'} 
+        bg-gray-900 modal-shadow h-full sm:w-[550px] p-4 modal
+          w-[100vw]`}
           onClick={(e) => e.stopPropagation()}
         >
           <section className='flex flex-col h-full'>

@@ -25,9 +25,10 @@ body {
 }
 
 .cart-button {
-  @apply bg-rose-600 text-white px-5 font-roboto mx-4 border-2
+  @apply bg-rose-600 text-white sm:px-5 font-roboto sm:mx-4 border-2
   border-rose-600 rounded-md active:bg-white active:text-rose-600 
-  active:border-2 transition-all hover:bg-rose-500 hover:border-rose-500;
+  active:border-2 transition-all hover:bg-rose-500 hover:border-rose-500
+  px-3 mx-3;
 }
 
 .main-card-shadow {
@@ -50,8 +51,8 @@ body {
   transition: right 0.3s ease-out;
 }
 
-.right-600- {
-  right: -600px;
+.right-700- {
+  right: -700px;
 }
 
 .right-0 {
