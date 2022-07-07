@@ -5,12 +5,14 @@ import MainCard from '../components/MainCard';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import PropTypes from 'prop-types';
+import FilterIcon from '@mui/icons-material/FilterAlt';
 
 class Main extends React.Component {
   state = {
     category: '',
     query: '',
     products: [],
+    displayCategories: false,
   };
 
   handleChange = ({ target }) => {
@@ -30,8 +32,12 @@ class Main extends React.Component {
     }));
   };
 
+  toggleCategoriesDisplay = () => this.setState(({ displayCategories }) => ({
+    displayCategories: !displayCategories
+  }));
+
   render() {
-    const { products, query } = this.state;
+    const { products, query, displayCategories } = this.state;
     const { cartItems, addToCart, removeFromCart } = this.props;
     return (
       <div>
@@ -40,15 +46,22 @@ class Main extends React.Component {
           addToCart={addToCart}
           removeFromCart={removeFromCart}
         >
+          <button 
+            className='m-1'
+            onClick={ this.toggleCategoriesDisplay }  
+          >
+            <FilterIcon className='text-white'/>
+          </button>
           <SearchBar 
             value={query}
             name='query'
             onChange={this.handleChange}
           />
         </Header>
-        <div className='flex w-full p-3'>
+        <div className='flex flex-col w-full p-3 lg:w-5/6 lg:m-auto'>
           <Categories 
             handleChange={this.handleChange}
+            display={displayCategories}
           />
           <main className='grow flex flex-wrap justify-center'>
             { products.map((props) => <MainCard 

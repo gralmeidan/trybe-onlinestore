@@ -17,10 +17,18 @@ class Categories extends React.Component {
 
   render() {
     const { categories } = this.state;
+    const { display } = this.props;
     return (
-      <aside className='max-w-fit w-36 m-1'>
+      <section 
+        className={`m-1 overflow-hidden transition-all duration-200 delay-[0ms]
+        category-${display ? 'display' : 'hide'}`}
+      >
         { categories.map(({ id, name }) => (
-          <label key={id} className='flex items-center group cursor-pointer'>
+          <label 
+            key={id} 
+            className='group cursor-pointer inline-block rounded-md m-1 
+            px-1 category-shadow'
+          >
             <input
               onChange={this.props.handleChange}
               type='radio' 
@@ -31,13 +39,14 @@ class Categories extends React.Component {
             <p className='checkmark'>{name}</p>
           </label>
         )) }
-      </aside>
+      </section>
     );
   }
 }
 
 Categories.propTypes = {
   handleChange: PropTypes.func.isRequired,
+  display: PropTypes.bool.isRequired,
 };
 
 export default Categories;

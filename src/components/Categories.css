@@ -9,3 +9,17 @@
 input:checked + .checkmark {
   @apply text-rose-600 group-hover:text-rose-500;
 }
+
+.category-shadow {
+  box-shadow: -2px 2px 3px 1px #a6abb44f;
+}
+
+.category-hide {
+  max-height: 0px;
+  @apply ease-out;
+}
+
+.category-display {
+  max-height: 1500px;
+  @apply ease-in;
+}
