@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import PropTypes from 'prop-types';
 import CheckoutCart from "../components/CheckoutCart";
+import TextInput from "../components/TextInput";
 
 function Checkout({ cartItems, addToCart, removeFromCart }) {
   return(
@@ -18,6 +19,7 @@ function Checkout({ cartItems, addToCart, removeFromCart }) {
           addToCart={addToCart}
           removeFromCart={removeFromCart}
         />
+        <TextInput />
       </main>
     </div>
   );

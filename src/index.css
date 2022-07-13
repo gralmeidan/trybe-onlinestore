@@ -70,3 +70,19 @@ text-rose-600 rounded-md py-1 hover:bg-rose-600 hover:text-white
   transition-all disabled:border-rose-300 disabled:text-rose-300
   disabled:hover:bg-white disabled:hover:text-rose-300;
 }
+
+.fancy-label {
+  @apply scale-90 font-roboto transition-all;
+}
+
+.fancy-input:placeholder-shown + .fancy-label {
+  @apply translate-y-8 translate-x-2 scale-100 text-neutral-500;
+}
+
+.fancy-input {
+  @apply py-2 font-roboto;
+}
+
+.fancy-input:focus + .fancy-label {
+  @apply text-rose-600 translate-y-0 translate-x-0 scale-90;
+}
