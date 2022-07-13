@@ -20,13 +20,14 @@ class MainCard extends React.Component {
         items-center" onClick={e => e.preventDefault()}>
           <p>{`R$ ${formattedPrice(price)}`}</p>
           { free_shipping &&
-          <div className="relative flex justify-center group -z-0"> 
+          <p className="relative flex justify-center group -z-0"> 
             <ShippingIcon className="text-rose-600" alt="Free shipping"/>
             <p className="absolute text-center -top-9 whitespace-nowrap bg-rose-600
             font-roboto text-white font-bold px-3 py-1 rounded-lg opacity-0 
-            group-hover:opacity-100 transition-opacity delay-150"
+            group-hover:opacity-100 transition-opacity scale-0
+            group-hover:scale-100"
             >Frete grátis</p>
-          </div> }
+          </p> }
           <button
             onClick={() => {
               addToCart({ ...this.props });
