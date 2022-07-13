@@ -13,7 +13,7 @@ const ProductPricing = (props) => {
     prazo: undefined,
     preco: undefined,
   });
-
+  console.log(op);
   const handleCEPChange = (event) => {
     const { nativeEvent: { inputType }} = event;
     let { value } = event.target;
@@ -39,7 +39,7 @@ const ProductPricing = (props) => {
   return (
     <div className='m-2 md:shrink md:h-[500px] md:flex md:flex-col'>
       <div className='mb-4'>
-        {discount && (
+        {discount > 0 && (
           <p>
             <span className="text-neutral-500 line-through mr-1 font-roboto">
             R$ {formattedPrice(op)}
