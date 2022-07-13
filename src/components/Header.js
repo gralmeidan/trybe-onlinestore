@@ -28,17 +28,21 @@ class Header extends React.Component {
           <div className='flex grow justify-center'>
             {this.props.children}
           </div>
-          <button onClick={this.modalToggle} className="mx-3">
-            <ShoppingCartIcon className='text-rose-50'/>
-          </button>
+          { this.props.displayCart &&
+            <button onClick={this.modalToggle} className="mx-3">
+              <ShoppingCartIcon className='text-rose-50'/>
+            </button>
+          }
         </div>
-        <CartModal 
-          display={this.state.display}
-          cartItems={this.props.cartItems}
-          modalToggle={this.modalToggle}
-          addToCart={this.props.addToCart}
-          removeFromCart={this.props.removeFromCart}
-        />
+        { this.props.displayCart &&
+          <CartModal 
+            display={this.state.display}
+            cartItems={this.props.cartItems}
+            modalToggle={this.modalToggle}
+            addToCart={this.props.addToCart}
+            removeFromCart={this.props.removeFromCart}
+          />
+        }
       </header>
     );};
 }
@@ -51,6 +55,11 @@ Header.propTypes = {
   cartItems: PropTypes.any.isRequired,
   addToCart: PropTypes.func.isRequired,
   removeFromCart: PropTypes.func.isRequired,
+  displayCart: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  displayCart: true,
 };
 
 export default Header;

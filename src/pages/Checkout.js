@@ -1,9 +1,32 @@
 import React from "react";
+import Header from "../components/Header";
+import PropTypes from 'prop-types';
+import CheckoutCart from "../components/CheckoutCart";
 
-function Checkout() {
+function Checkout({ cartItems, addToCart, removeFromCart }) {
   return(
-    <div>checkout</div>
+    <div>
+      <Header
+        cartItems={cartItems}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+        displayCart={false}
+      />
+      <main className="m-2">
+        <CheckoutCart
+          cartItems={cartItems}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
+      </main>
+    </div>
   );
 }
+
+Checkout.propTypes = {
+  cartItems: PropTypes.object.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
+};
 
 export default Checkout;
