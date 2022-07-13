@@ -7,6 +7,7 @@ import ProductInfo from "./ProductInfo";
 import ProductPricing from "./ProductPricing";
 import ProductAttributes from "./ProductAttributes";
 import ProductReviews from "./ProductReviews";
+import Loading from "../../components/Loading";
 
 class ProductDetails extends React.Component {
   state = {
@@ -31,7 +32,7 @@ class ProductDetails extends React.Component {
           addToCart={addToCart}
           removeFromCart={removeFromCart}
         />
-        { !title ? <p>loading</p> :
+        { !title ? <Loading />:
           <main className="mt-2 lg:w-5/6 lg:m-auto xl:w-3/4">
             <div className="md:flex">
               <PictureDisplay pictures={pictures} />

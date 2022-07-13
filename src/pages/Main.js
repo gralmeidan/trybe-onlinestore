@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import PropTypes from 'prop-types';
 import FilterIcon from '@mui/icons-material/FilterAlt';
+import Loading from '../components/Loading';
 
 class Main extends React.Component {
   state = {
@@ -37,7 +38,7 @@ class Main extends React.Component {
   }));
 
   render() {
-    const { products, query, displayCategories } = this.state;
+    const { products, category, query, displayCategories } = this.state;
     const { cartItems, addToCart, removeFromCart } = this.props;
     return (
       <div>
@@ -64,14 +65,16 @@ class Main extends React.Component {
             display={displayCategories}
           />
           <main className='grow flex flex-wrap justify-center'>
-            { products.map((props) => <MainCard 
-              {...props} 
-              key={props.id}
-              inCart={
-                typeof Object.values(cartItems).find(({ id }) => id === props.id) !== 'undefined'
-              }
-              addToCart={addToCart}  
-            />)}
+            { (category !== '' && query !== '' && products.length === 0) ? <Loading /> : (
+              products.map((props) => <MainCard 
+                {...props} 
+                key={props.id}
+                inCart={
+                  typeof Object.values(cartItems).find(({ id }) => id === props.id) !== 'undefined'
+                }
+                addToCart={addToCart}  
+              />)
+            )}
           </main>
         </div>
       </div>

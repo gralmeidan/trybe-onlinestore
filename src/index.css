@@ -86,3 +86,12 @@ text-rose-600 rounded-md py-1 hover:bg-rose-600 hover:text-white
 .fancy-input:focus + .fancy-label {
   @apply text-rose-600 translate-y-0 translate-x-0 scale-90;
 }
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
