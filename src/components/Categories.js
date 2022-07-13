@@ -20,7 +20,7 @@ class Categories extends React.Component {
     const { display } = this.props;
     return (
       <section 
-        className={`m-1 overflow-hidden transition-all duration-200 delay-[0ms]
+        className={`m-1 overflow-hidden transition-all duration-500 delay-[0ms]
         category-${display ? 'display' : 'hide'}`}
       >
         { categories.map(({ id, name }) => (

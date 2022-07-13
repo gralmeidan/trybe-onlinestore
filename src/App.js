@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { getCart, addToCart, removeFromCart } from './services/cartStorage';
 import ProductDetails from './pages/ProductDetails';
 import Main from './pages/Main';
+import Checkout from './pages/Checkout';
 
 class App extends React.Component {
   state = {
@@ -48,6 +49,17 @@ class App extends React.Component {
             path="/product/:id" 
             render={(props) => (
               <ProductDetails 
+                {...props}
+                cartItems={this.state.cartItems}
+                addToCart={this.addToCart}
+                removeFromCart={this.removeFromCart}
+              />
+            )}  
+          />
+          <Route 
+            path="/checkout" 
+            render={(props) => (
+              <Checkout 
                 {...props}
                 cartItems={this.state.cartItems}
                 addToCart={this.addToCart}

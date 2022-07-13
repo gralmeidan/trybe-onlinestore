@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import CloseIcon from '@mui/icons-material/Close';
 import CartCard from './CartCard';
 import { formattedPrice } from '../helpers/formatting';
+import CheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import { Link } from 'react-router-dom';
 
 class CartModal extends React.Component {
 
@@ -51,9 +53,19 @@ class CartModal extends React.Component {
               }) }
             </div>
             <hr className='border-gray-600' />
-            <p
-              className='font-roboto text-lg font-semibold text-white mt-2'
-            >R$ {formattedPrice(totalPrice)}</p>
+            <div className='flex justify-between pt-2'>
+              <p
+                className='font-roboto text-lg font-semibold text-white mt-2'
+              >R$ {formattedPrice(totalPrice)}</p>
+              <Link
+                className='font-roboto text-white text-lg font-semibold px-2'
+                to='/checkout'
+              >
+                <CheckoutIcon 
+                  alt='Finalizar compra'
+                />
+              </Link>
+            </div>
           </section>
         </div>
       </div>
