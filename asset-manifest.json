@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/trybe-onlinestore/static/css/main.6775540f.css",
-    "main.js": "/trybe-onlinestore/static/js/main.fb95c7f3.js",
+    "main.js": "/trybe-onlinestore/static/js/main.9c4b69f1.js",
     "static/js/787.a92fe09e.chunk.js": "/trybe-onlinestore/static/js/787.a92fe09e.chunk.js",
     "index.html": "/trybe-onlinestore/index.html",
     "main.6775540f.css.map": "/trybe-onlinestore/static/css/main.6775540f.css.map",
-    "main.fb95c7f3.js.map": "/trybe-onlinestore/static/js/main.fb95c7f3.js.map",
+    "main.9c4b69f1.js.map": "/trybe-onlinestore/static/js/main.9c4b69f1.js.map",
     "787.a92fe09e.chunk.js.map": "/trybe-onlinestore/static/js/787.a92fe09e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6775540f.css",
-    "static/js/main.fb95c7f3.js"
+    "static/js/main.9c4b69f1.js"
   ]
 }
