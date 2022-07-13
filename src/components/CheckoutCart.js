@@ -10,6 +10,12 @@ function CheckoutCart({ cartItems, addToCart, removeFromCart }) {
     overflow-hidden"
     >
       <h1 className="-mb-4 mt-2 ml-2">Revise seu carrinho:</h1>
+      {
+        Object.values(cartItems).length === 0 && (
+          <p className=" text-center my-6 text-3xl font-roboto font-semibold"
+          >Seu carrinho está vazio {':('}</p>
+        )
+      }
       {Object.keys(cartItems).map(id => {
         return (
           <CartCard

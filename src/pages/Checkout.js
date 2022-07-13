@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import PropTypes from 'prop-types';
 import CheckoutCart from "../components/CheckoutCart";
-import TextInput from "../components/TextInput";
+import BuyerForm from "../components/BuyerForm";
 
 function Checkout({ cartItems, addToCart, removeFromCart }) {
   return(
@@ -13,13 +13,13 @@ function Checkout({ cartItems, addToCart, removeFromCart }) {
         removeFromCart={removeFromCart}
         displayCart={false}
       />
-      <main className="m-2">
+      <main className="m-2 mt-4 lg:w-5/6 lg:m-auto lg:mt-4">
         <CheckoutCart
           cartItems={cartItems}
           addToCart={addToCart}
           removeFromCart={removeFromCart}
         />
-        <TextInput />
+        <BuyerForm />
       </main>
     </div>
   );
